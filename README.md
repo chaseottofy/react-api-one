@@ -1,7 +1,7 @@
 # rss-parser-demo
 
-This is a simple demo using the `rss-parser` package to parse RSS feeds.
+Simple clone of the front page of hacker news using RSS as the data source, built with React, Typescript, and rss-parser.
 
-Recreated the homepage of hacker news using their RSS feed, Only the top 30 articles are loaded, and all of the buttons are just for show aside from the article links. Uses a proxy to get around CORS issues.
-
-No authentication needed.
+Loads the top 30 stories, minimal functionality but the title links work.
+Uses the heroku cors-anywhere proxy to get around CORS issues. 
+Just a demo - will not be building this out further.
