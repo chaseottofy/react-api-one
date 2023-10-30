@@ -1,51 +1,10 @@
 import './Header.css';
 import logoSvg from '../../images/logo.svg';
 
-interface HeaderNavLinksInterface {
-  href: string,
-  title: string,
-}
-
-const headerNavLinks: HeaderNavLinksInterface[] = [
-  {
-    href: '/welcome',
-    title: 'welcome',
-  },
-  {
-    href: '/new',
-    title: 'new',
-  },
-  {
-    href: '/threads',
-    title: 'threads',
-  },
-  {
-    href: '/past',
-    title: 'past',
-  },
-  {
-    href: '/comments',
-    title: 'comments',
-  },
-  {
-    href: '/ask',
-    title: 'ask',
-  },
-  {
-    href: '/show',
-    title: 'show',
-  },
-  {
-    href: '/jobs',
-    title: 'jobs',
-  },
-  {
-    href: '/submit',
-    title: 'submit',
-  }
-];
 
 const Header = () => {
+  const headerNavLinks: string[] = ['welcome', 'new', 'threads', 'past', 'comments', 'ask', 'show', 'jobs', 'submit'];
+  
   return (
     <header className="header">
       <div className="header-col header-logo--wrapper">
@@ -62,13 +21,13 @@ const Header = () => {
         </div>
         <ul className="header-list">
           {
-            headerNavLinks.map((headerNavLink: HeaderNavLinksInterface, index: number) => {
+            headerNavLinks.map((headerNavLink: string, index: number) => {
               return (
                 <li key={index}>
                   <a
-                    href={headerNavLink.href}
-                    title={"go to " + headerNavLink.title}
-                  >{headerNavLink.title}</a>
+                    href='#'
+                    title={"go to " + headerNavLink}
+                  >{headerNavLink}</a>
                   {index !== headerNavLinks.length - 1 && ' |' + '\u00A0'}
                 </li>
               );

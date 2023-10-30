@@ -16,15 +16,7 @@ interface PostData {
 
 const PostItemContent = (props: PostData) => {
   const {
-    title,
-    index,
-    link,
-    score,
-    user,
-    time,
-    comments,
-    setFeed,
-    feed,
+    title, index, link, score, user, time, comments, setFeed, feed,
   } = props;
 
   const trimmedLink: string = trimUrl(link);
@@ -41,9 +33,11 @@ const PostItemContent = (props: PostData) => {
       <div className="post-content">
         <div className="post-top">
           <a
-            href="#"
+            href={link}
             className="post-title"
             title={trimmedLink}
+            target="_blank"
+            rel="noreferrer"
           >
             {title + ' '}
             <small>{'(' + trimmedLink + ')'}</small>

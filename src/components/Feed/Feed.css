@@ -60,13 +60,10 @@
 
 .post-top {
   min-height: var(--toph) !important;
-  /* max-height: var(--toph); */
 }
 
 .post-sub {
   min-height: var(--both) !important;
-  /* max-height: var(--both); */
-  /* line-height: 6pt !important; */
   line-height: 8px;
   padding-left: 1px;
 }
@@ -108,4 +105,11 @@
 .post-sub a:hover,
 .post button:hover {
   text-decoration: underline;
+}
+
+.post-sub--userlink,
+.post-sub--time,
+.post-sub--comments {
+  pointer-events: none;
+  user-select: none;
 }
