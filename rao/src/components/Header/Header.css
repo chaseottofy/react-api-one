@@ -1,0 +1,126 @@
+.header {
+  height: var(--header-height1);
+  color: var(--white0);
+  background: var(--primary1);
+  display: flex;
+  align-items: center;
+  font-size: var(--font-s1);
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* max-width: var(--max-w1); */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-logo--wrapper a {
+  box-shadow: 0 0 0 1px #303426;
+  height: 20px;
+  width: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white1);
+}
+
+/* HEADER */
+.header-col {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-col--two {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-title {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  text-wrap: nowrap;
+}
+
+.header-logo--wrapper {
+  height: 100%;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-list {
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.header-list li {
+  display: inline-block;
+  height: var(--header-height1);
+  line-height: var(--header-height1);
+}
+
+.header-list li a {
+  color: var(--white1);
+}
+
+.header-col:last-child {
+  margin-left: auto;
+  padding-right: 8px;
+  width: 100px;
+  text-align: right;
+}
+
+.header-col:last-child a {
+  color: var(--white1);
+  margin-left: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    height: var(--header-height2);
+  }
+
+  .header-col--two {
+    justify-content: unset;
+    height: var(--header-height2) !important;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .header-title {
+    height: 16px !important;
+  }
+
+  .header-title h1 {
+    font-size: 12px;
+  }
+
+  .header-list {
+    height: calc(var(--header-height2) - 16px) !important;
+    font-size: 12px;
+  }
+
+  .header-list li {
+    height: 12px !important;
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: var(--header-height3);
+  }
+
+  .header-list {
+    height: calc(var(--header-height3) - 16px) !important;
+  }
+}

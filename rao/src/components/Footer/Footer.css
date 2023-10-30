@@ -1,0 +1,9 @@
+.footer {
+  width: 100%;
+  border-top: 2px solid var(--primary1);
+  height: var(--footer-height1);
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--black1);
+}
