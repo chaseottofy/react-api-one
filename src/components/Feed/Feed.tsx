@@ -1,10 +1,15 @@
-import { useState, useEffect } from 'react';
-import './Feed.css';
-import { TempFeedInterface } from '../../models/interfaces';
-import PostSkeleton from '../PostList/PostSkeleton';
-import fakefeed from '../../data/fakefeed.json';
+import { useEffect, useState } from 'react';
+// This is a workaround, there is an issue with rss-parser and
+// importing it directly was the only workaround I could find
+// eslint-disable-next-line import/extensions
 import Parser from 'rss-parser/dist/rss-parser.min.js';
+
+import fakefeed from '../../data/fakefeed.json';
+import { TempFeedInterface } from '../../models/interfaces';
 import PostList from '../PostList/PostList';
+import PostSkeleton from '../PostList/PostSkeleton';
+
+import './Feed.css';
 
 const Main = () => {
   const [feed, setFeed] = useState(null as unknown as TempFeedInterface[]);
@@ -20,11 +25,12 @@ const Main = () => {
         setFeed(data.items);
         setLoading(false);
         setError(false);
-      } catch (error) {
-        console.warn(error);
-        setError(true);
-        setLoading(false);
+      } catch (requestError) {
+        // eslint-disable-next-line no-console
+        console.warn(requestError);
         setFakeFeed(fakefeed.items);
+        setLoading(false);
+        setError(true);
       }
     }
 
@@ -32,12 +38,12 @@ const Main = () => {
   }, []);
 
   return (
-    <main className="main">
-      <ul className="post-list">
+    <main className='main'>
+      <ul className='post-list'>
         {
           loading ? <PostSkeleton feedLength={30} />
-          : error ? <PostList feed={fakeFeed} setFeed={setFeed} />
-          : <PostList feed={feed} setFeed={setFeed} />
+            : (error ? <PostList feed={fakeFeed} setFeed={setFeed} />
+              : <PostList feed={feed} setFeed={setFeed} />)
         }
       </ul>
     </main>

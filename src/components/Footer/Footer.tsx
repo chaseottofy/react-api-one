@@ -1,9 +1,5 @@
 import './Footer.css';
 
-const Footer = () => {
-  return (
-    <footer className="footer"></footer>
-  );
-};
+const Footer = () => <footer className='footer' />;
 
 export default Footer;

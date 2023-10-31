@@ -103,10 +103,3 @@
 .post button:hover {
   text-decoration: underline;
 }
-
-.post-sub--userlink,
-.post-sub--time,
-.post-sub--comments {
-  pointer-events: none;
-  user-select: none;
-}

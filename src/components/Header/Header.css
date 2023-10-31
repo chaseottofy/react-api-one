@@ -21,8 +21,6 @@
   align-items: center;
   justify-content: center;
   color: var(--white1);
-  user-select: none !important;
-  pointer-events: none !important;
 }
 
 /* HEADER */
@@ -71,8 +69,6 @@
 
 .header-list li a {
   color: var(--white1);
-  user-select: none !important;
-  pointer-events: none !important;
 }
 
 .header-col:last-child {

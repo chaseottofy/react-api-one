@@ -1,6 +1,6 @@
 import arrowSVG from '../../images/arrow.svg';
-import trimUrl from '../../utils/trimUrl';
 import { PostData, TempFeedInterface } from '../../models/interfaces';
+import trimUrl from '../../utils/trimUrl';
 
 const PostListItem = (props: PostData) => {
   const {
@@ -11,40 +11,59 @@ const PostListItem = (props: PostData) => {
 
   return (
     <>
-      <div className="post-side">
-        <span className="post-index">{index}</span>
-        <button className="post-vote" title="upvote">
-          <img src={arrowSVG} alt="" />
+      <div className='post-side'>
+        <span className='post-index'>{index}</span>
+        <button className='post-vote' title='upvote' type='button'>
+          <img src={arrowSVG} alt='' />
         </button>
       </div>
 
-      <div className="post-content">
-        <div className="post-top">
+      <div className='post-content'>
+        <div className='post-top'>
           <a
             href={link}
-            className="post-title"
+            className='post-title'
             title={trimmedLink}
-            target="_blank"
-            rel="noreferrer"
+            target='_blank'
+            rel='noreferrer'
           >
-            {title + ' '}
-            <small>{'(' + trimmedLink + ')'}</small>
+            {`${title} `}
+            <small>{`(${trimmedLink})`}</small>
           </a>
         </div>
 
-        <div className="post-sub">
-          <span className="post-sub--score">{score} points by </span>
-          <a href="#" className='post-sub--userlink'>{user}&nbsp;</a>
-          <a href="#" className='post-sub--time'>{time} ago</a>
+        <div className='post-sub'>
+          <span className='post-sub--score'>
+            {score}
+            {' '}
+            points by
+            {' '}
+          </span>
+          <a href='#root' className='post-sub--userlink'>
+            {user}
+&nbsp;
+          </a>
+          <a href='#root' className='post-sub--time'>
+            {time}
+            {' '}
+            ago
+          </a>
           <span className='post-divide'>|</span>
           <button
-            className="post-sub--hidepost"
+            type='button'
+            className='post-sub--hidepost'
             onClick={() => {
               setFeed(feed.filter((item: TempFeedInterface) => item !== feed[index - 1]));
             }}
-          >hide</button>
+          >
+            hide
+          </button>
           <span className='post-divide'>|</span>
-          <a href="#" className="post-sub--comments">{comments} comments</a>
+          <a href='#root' className='post-sub--comments'>
+            {comments}
+            {' '}
+            comments
+          </a>
         </div>
       </div>
     </>
