@@ -1,8 +1,6 @@
 :root {
   --primaryFont: 'Verdana', Geneva, sans-serif;
-  /* --skeleton1: linear-gradient(270deg, #111, #333, #888, #111); */
   --skeleton1: linear-gradient(270deg, #c95507, #a84b0d, #c95507, #a84b0d);
-  /* --skeleton1: linear-gradient(270deg, #111, #333, #333, #111); */
 
   --grey1: #737373;
   --grey2: #828282;
@@ -70,13 +68,6 @@ body {
   overflow: hidden;
   overflow-y: scroll;
 }
-
-/* header,
-main,
-footer {
-  max-width: 1200px;
-  margin: 0 auto;
-} */
 
 input,
 ul,
@@ -163,13 +154,6 @@ button:focus-visible {
 ::selection {
   color: var(--white1);
 }
-
-/* button,
-a,
-input {
-  pointer-events: none !important;
-  user-select: none !important;
-} */
 
 @keyframes skeleton-loading {
   0% {

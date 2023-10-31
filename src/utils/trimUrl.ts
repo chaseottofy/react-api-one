@@ -1,19 +1,20 @@
 const domainNamesToKeepFirstSlash = [
-  'github.com',
-  'twitter.com',
-  'linkedin.com',
-  'youtube.com',
-  'medium.com',
+  'myspace.com',
+  'friendster.com',
 ];
 
-const trimUrl = (url: string) => {
-  // Extract the host from the URL
+/**
+ * Hacker news only trims the URL down to the domain name, 
+ * but for social media will keep the first path segment.
+ * Store the domains that should keep the first path segment
+ * in the array above. I went ahead and added the ones I don't despise...
+ * 
+ * @param url {string} - The URL to trim
+ * @returns {string} - The trimmed URL
+ */
+const trimUrl = (url: string): string => {
   const host = new URL(url).host;
-
-  // Extract the domain without subdomains
   const domain = host.split('.').slice(-2).join('.');
-
-  // If the domain is in the array, extract the first path segment
   if (domainNamesToKeepFirstSlash.includes(domain)) {
     const pathSegments = new URL(url).pathname.split('/').filter(Boolean);
     if (pathSegments.length > 0) {

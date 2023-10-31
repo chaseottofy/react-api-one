@@ -1,5 +1,4 @@
 .main {
-  /* max-width: var(--max-w1); */
   width: 100%;
   overflow: hidden;
   height: 100%;
@@ -10,8 +9,6 @@
   margin: 0 auto;
 }
 
-/* ******************** */
-/* POST */
 .post {
   display: flex;
   align-items: center;

@@ -1,10 +1,5 @@
-import PostItemContent from './PostItemContent';
-import { TempFeedInterface } from '../../models/interfaces';
-
-interface PostListProps {
-  feed: TempFeedInterface[];
-  setFeed: React.Dispatch<React.SetStateAction<TempFeedInterface[]>>;
-}
+import PostListItem from './PostListItem';
+import { PostListProps } from '../../models/interfaces';
 
 const PostList = ({ feed, setFeed }: PostListProps) => {
   return (
@@ -12,7 +7,7 @@ const PostList = ({ feed, setFeed }: PostListProps) => {
       {feed.map((post: any, index: number) => {
         return (
           <li key={index} className='post'>
-            <PostItemContent
+            <PostListItem
               title={post.title}
               index={index + 1}
               link={post.link}

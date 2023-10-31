@@ -1,20 +1,8 @@
 import arrowSVG from '../../images/arrow.svg';
 import trimUrl from '../../utils/trimUrl';
-import { TempFeedInterface } from '../../models/interfaces';
+import { PostData, TempFeedInterface } from '../../models/interfaces';
 
-interface PostData {
-  title: string,
-  index: number,
-  link: string,
-  score: number,
-  user: string,
-  time: string,
-  comments: number;
-  setFeed: React.Dispatch<React.SetStateAction<TempFeedInterface[]>>;
-  feed: TempFeedInterface[];
-}
-
-const PostItemContent = (props: PostData) => {
+const PostListItem = (props: PostData) => {
   const {
     title, index, link, score, user, time, comments, setFeed, feed,
   } = props;
@@ -63,4 +51,4 @@ const PostItemContent = (props: PostData) => {
   );
 };
 
-export default PostItemContent;
+export default PostListItem;

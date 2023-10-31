@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import './Feed.css';
 import { TempFeedInterface } from '../../models/interfaces';
-import FeedSkeleton from './FeedSkeleton';
+import PostSkeleton from '../PostList/PostSkeleton';
 import fakefeed from '../../data/fakefeed.json';
 import Parser from 'rss-parser/dist/rss-parser.min.js';
-import PostList from './PostList';
+import PostList from '../PostList/PostList';
 
 const Main = () => {
   const [feed, setFeed] = useState(null as unknown as TempFeedInterface[]);
@@ -29,14 +29,13 @@ const Main = () => {
     }
 
     getFeed();
-    // return () => { getFeed(); };
   }, []);
 
   return (
     <main className="main">
       <ul className="post-list">
         {
-          loading ? <FeedSkeleton />
+          loading ? <PostSkeleton feedLength={30} />
           : error ? <PostList feed={fakeFeed} setFeed={setFeed} />
           : <PostList feed={feed} setFeed={setFeed} />
         }

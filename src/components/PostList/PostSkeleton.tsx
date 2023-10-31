@@ -1,9 +1,9 @@
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-const FeedSkeleton = () => {
+const PostSkeleton = ({ feedLength }: { feedLength: number; }) => {
   return (
-    Array(30).fill(0).map((_, index) => {
+    Array(feedLength).fill(0).map((_, index) => {
       return (
         <li key={index} className='post'>
           <Skeleton
@@ -19,4 +19,4 @@ const FeedSkeleton = () => {
   );
 };
 
-export default FeedSkeleton;
+export default PostSkeleton;

@@ -8,7 +8,6 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  /* max-width: var(--max-w1); */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -74,7 +73,6 @@
   color: var(--white1);
   user-select: none !important;
   pointer-events: none !important;
-  /* text-decoration: none; */
 }
 
 .header-col:last-child {
